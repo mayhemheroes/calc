@@ -2,4 +2,4 @@ project: calc
 target: calc
 
 cmds:
-  - cmd: /repo/calc
+  - cmd: /install/calc
