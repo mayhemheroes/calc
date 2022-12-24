@@ -1,4 +1,5 @@
 name: Mayhem
+permissions: write-all
 on:
   push:
   pull_request:
