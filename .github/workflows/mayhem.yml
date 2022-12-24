@@ -49,7 +49,24 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Start analysis
+    outputs:
+      image: ${{ steps.meta.outputs.tags }}
+
+  mayhem:
+    needs: build
+    name: 'fuzz ${{ matrix.mayhemfile }}'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        mayhemfile:
+          - mayhem/Mayhemfile_calc
+          - mayhem/Mayhemfile_convhex2z
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Start analysis for ${{ matrix.mayhemfile }}
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
