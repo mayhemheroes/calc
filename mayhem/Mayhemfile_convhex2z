@@ -1,0 +1,8 @@
+project: calc
+target: convhex2z
+
+cmds:
+  - cmd: /fuzz_convhex2z
+    libfuzzer: true
+    env:
+      ASAN_OPTIONS: detect_leaks=0
