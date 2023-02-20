@@ -1,4 +1,17 @@
-The following are the changes from calc version 2.14.2.0 to date:
+The following are the changes from calc version 2.14.2.3 to date:
+
+    Fixed missing <string.h include in have_fpos_pos.c.
+
+    Change calc version from 2.14.1.2 to 2.14.2.3 as part of a test to
+    build calc RPMs on a reference RHEL8.7 platform (formerly a RHEL7.9
+    platform).
+
+    Changes #! lines in Makefiles to "#!/usr/bin/env make".
+
+    Set SHELL in Makefiles to the basename of the shell.
+
+
+The following are the changes from calc version 2.14.2.0 to 2.14.1.2:
 
     Attempted to address a paranoid compiler warning -Wmaybe-uninitialized
     in swap_HALF_in_ZVALUE() where the gcc compiler seems to ignore the
