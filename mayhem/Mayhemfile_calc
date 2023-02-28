@@ -1,0 +1,5 @@
+project: calc
+target: calc
+
+cmds:
+  - cmd: /install/calc
